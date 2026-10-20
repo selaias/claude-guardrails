@@ -2,6 +2,8 @@
 
 The rules I give Claude Code so it doesn't break production again.
 
+![The ten rules, as commandments](assets/ten-commandments.png)
+
 I've been writing software for about 25 years. These days I build two live products mostly with Claude Code, with real users, live payments and a production database. It's fast, it's good, and when it goes wrong it goes wrong with total confidence.
 
 This repo is the `CLAUDE.md` I ended up with. Every rule in it is there because something actually broke.
@@ -30,6 +32,7 @@ The other big one: twice, a secret value ended up in an AI session transcript. E
 |---|---|
 | [`CLAUDE.md`](CLAUDE.md) | The 10 rules, in priority order. Claude Code loads it at the start of every session. |
 | [`.claude/commands/security-scan.md`](.claude/commands/security-scan.md) | `/security-scan`, an audit of your code, servers and credentials. It reports and stops. It doesn't "fix" anything and never prints a secret value. |
+| [`assets/`](assets/) | A two-sided cheatsheet (below) and the rules as one image. |
 
 ## Install
 
@@ -44,6 +47,14 @@ curl -o .claude/commands/security-scan.md https://raw.githubusercontent.com/sela
 Already have a `CLAUDE.md`? Paste the rules at the top. The order matters: security first, everything else after.
 
 Then run `/security-scan` inside Claude Code and see what it finds. Fair warning: the first run on an older repo is usually humbling. It was for me.
+
+## Cheatsheet
+
+The rules are sorted by priority, which is how you read them once. While you're working, you need them by moment. The front groups them by what you're about to do, and the back lists the sentences that should make you stop. Print it, or keep it open next to the terminal.
+
+![Pre-flight, by moment](assets/cheatsheet-front.png)
+
+![If you hear this, stop](assets/cheatsheet-back.png)
 
 ## What this won't do
 
